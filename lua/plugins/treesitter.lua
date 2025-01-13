@@ -1,5 +1,3 @@
--- Customize Treesitter
-
 ---@type LazySpec
 return {
   "nvim-treesitter/nvim-treesitter",
@@ -10,14 +8,19 @@ return {
     ensure_installed = {
       "lua",
       "vim",
+      'prisma',
+    },
+    autotag = {
+      enable = true,
     },
 
     highlight = {
       enable = true,
     },
-
-    autotag = {
-      enable = true,
-    },
   },
+
+  config = function()
+    -- Setup for nvim-ts-autotag
+    require('nvim-ts-autotag').setup()
+  end,
 }

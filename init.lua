@@ -14,6 +14,9 @@ if not (vim.env.LAZY or (vim.uv or vim.loop).fs_stat(lazypath)) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+
+
+
 -- validate that lazy is available
 if not pcall(require, "lazy") then
   -- stylua: ignore
@@ -21,7 +24,6 @@ if not pcall(require, "lazy") then
   vim.fn.getchar()
   vim.cmd.quit()
 end
-
 
 require "lazy_setup"
 require "polish"
